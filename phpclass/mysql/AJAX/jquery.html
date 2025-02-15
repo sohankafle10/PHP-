@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>jQuery AJAX Example</h1>
+    <button id="btn">click me</button>
+    <p id="demo">Hello World</p>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $.ajax({
+                    url: "data.php",
+                    type: "GET",
+                    success: function(data){
+                        $("#demo").html(data);
+                    }
+                });
+            });
+        });
+    </script>
+    
